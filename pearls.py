@@ -1,6 +1,5 @@
 from turtle import *
 import math
-from random import *
 
 defaultColor = "black"
 

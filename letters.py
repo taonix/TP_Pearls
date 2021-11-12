@@ -1,4 +1,7 @@
+from random import random
 from turtle import *
+
+defaultSpeed = 500
 
 
 def espacemment():
@@ -22,8 +25,10 @@ def a():
     forward(35)
 
     up()
-    goto(70, 0)
-    right(180)
+    left(90)
+    forward(30)
+    left(90)
+    forward(50)
 
 
 def u():
@@ -56,10 +61,13 @@ def u():
 def s():
     down()
     forward(30)
+
+    speed(defaultSpeed * 7)
     for x in range(60):
         forward(1)
         left(3)
     forward(25)
+    speed(defaultSpeed)
 
     for x in range(60):
         forward(1)
@@ -70,3 +78,13 @@ def s():
     right(90)
     forward(70)
     left(90)
+
+
+letters = [a, espacemment, u, espacemment, s, espacemment, a]
+
+
+def signature():
+    print(len(letters))
+    for i in range(len(letters)):
+        pencolor(random(), random(), random())
+        letters[i]()

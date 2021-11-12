@@ -8,38 +8,36 @@ import time
 import letters as l
 import pearls
 
+color = [random(), random(), random()]
+functions = [pearls.perleA, pearls.perleB, pearls.perleD]
 
-def signature():
-    l.a()
-    l.espacemment()
-    l.u()
-    l.espacemment()
-    l.s()
-    l.espacemment()
-    l.a()
-
+pearlCount = randint(2, 5)
+rayon = (6 - pearlCount) * 10
+necklaceSize = 200
+spacings = 50
 
 reset()
 
-color = [random(), random(), random()]
-functions = [pearls.perleA, pearls.perleB, pearls.perleD]
-pearl = randint(2, 5)
-rayon = 50
-
-speed(500)
+speed(l.defaultSpeed)
+pensize(5)
 
 up()
 goto(-300, 100)
 down()
 
-# signature()
+l.signature()
+pencolor(pearls.defaultColor)
 
-left(50)
-for i in range(pearl * 200):
+up()
+goto(-300, 50)
+down()
+
+right(50)
+for i in range(necklaceSize):
     down()
     forward(1)
     right(-0.5)
-    if i % pearl * 200 == 0 and i != 0 and i != 200:
+    if i%(100/pearlCount) == 0 and spacings > i > necklaceSize - spacings:
         up()
         right(90)
         forward(rayon * 2)
@@ -52,5 +50,6 @@ for i in range(pearl * 200):
         up()
         forward(rayon * 2)
         right(90)
+        pencolor(pearls.defaultColor)
 
 time.sleep(20)
