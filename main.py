@@ -14,12 +14,13 @@ functions = [pearls.perleA, pearls.perleB, pearls.perleD]
 pearlCount = randint(2, 5)
 rayon = (6 - pearlCount) * 10
 necklaceSize = 200
-spacings = 50
 
 reset()
 
+print(pearlCount)
+
 speed(l.defaultSpeed)
-pensize(5)
+
 
 up()
 goto(-300, 100)
@@ -37,7 +38,7 @@ for i in range(necklaceSize):
     down()
     forward(1)
     right(-0.5)
-    if i%(100/pearlCount) == 0 and spacings > i > necklaceSize - spacings:
+    if i % (pearlCount/necklaceSize) == 0:
         up()
         right(90)
         forward(rayon * 2)

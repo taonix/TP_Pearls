@@ -62,12 +62,11 @@ def s():
     down()
     forward(30)
 
-    speed(defaultSpeed * 7)
     for x in range(60):
         forward(1)
         left(3)
-    forward(25)
-    speed(defaultSpeed)
+
+    forward(20)
 
     for x in range(60):
         forward(1)
@@ -84,7 +83,6 @@ letters = [a, espacemment, u, espacemment, s, espacemment, a]
 
 
 def signature():
-    print(len(letters))
     for i in range(len(letters)):
         pencolor(random(), random(), random())
         letters[i]()
