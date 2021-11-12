@@ -11,7 +11,7 @@ import pearls
 color = [random(), random(), random()]
 functions = [pearls.perleA, pearls.perleB, pearls.perleD]
 
-pearlCount = randint(2, 5)
+pearlCount = randint(3, 6)
 rayon = (6 - pearlCount) * 10
 necklaceSize = 200
 
@@ -34,23 +34,23 @@ goto(-300, 50)
 down()
 
 right(50)
-for i in range(necklaceSize):
-    down()
-    forward(1)
-    right(-0.5)
-    if i % (pearlCount/necklaceSize) == 0:
-        up()
-        right(90)
-        forward(rayon * 2)
-        left(90)
+for j in range(pearlCount):
+    for i in range(necklaceSize//pearlCount):
         down()
-        if randint(0, 1) == 0:
-            choice(functions)(rayon, color)
-        else:
-            pearls.perleC(rayon, color, randint(2, 5))
-        up()
-        forward(rayon * 2)
-        right(90)
-        pencolor(pearls.defaultColor)
+        forward(1)
+        right(-0.5)
+    up()
+    right(90)
+    forward(rayon * 2)
+    left(90)
+    down()
+    if randint(0, 1) == 0:
+        choice(functions)(rayon, color)
+    else:
+        pearls.perleC(rayon, color, randint(2, 5))
+    up()
+    forward(rayon * 2)
+    right(90)
+    pencolor(pearls.defaultColor)
 
 time.sleep(20)
