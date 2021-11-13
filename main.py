@@ -8,49 +8,51 @@ import time
 import letters as l
 import pearls
 
-color = [random(), random(), random()]
-functions = [pearls.perleA, pearls.perleB, pearls.perleD]
+color = [random(), random(), random()]                                  # Couleur random
+functions = [pearls.perleA, pearls.perleB, pearls.perleD]               # Liste de toutes les perles à deux args
 
-pearlCount = randint(3, 6)
-rayon = (6 - pearlCount) * 10
-necklaceSize = 200
+pearlCount = randint(3, 5)                                              # Génération du nmbr de Pearls
+rayon = (6 - pearlCount) * 10                                           # Rayon statique
+necklaceSize = 200                                                      # Taille du collier
 
-reset()
+reset()                                                                 # Reset de l'affichage
 
-print(pearlCount)
-
-speed(l.defaultSpeed)
+speed(l.defaultSpeed)                                                   # Set de la vitesse
 
 
-up()
-goto(-300, 100)
-down()
+up()                                                                    # Positionemment de
+goto(-300, 100)                                                         # la compostion
+down()                                                                  # de la signature
 
-l.signature()
-pencolor(pearls.defaultColor)
+l.signature()                                                           # Signature
+pencolor(pearls.defaultColor)                                           # Redéfinission de la couleur par défaut pour le collier
 
-up()
-goto(-300, 50)
-down()
+up()                                                                    # Positionemment de
+goto(-250, 50)                                                          # la compostion
+down()                                                                  # du collier
 
-right(50)
-for j in range(pearlCount):
-    for i in range(necklaceSize//pearlCount):
-        down()
-        forward(1)
-        right(-0.5)
-    up()
-    right(90)
-    forward(rayon * 2)
-    left(90)
-    down()
-    if randint(0, 1) == 0:
-        choice(functions)(rayon, color)
-    else:
+
+right(50)                                                               # Recentrage
+for i in range(pearlCount - 1):                                         # Génération des pearl
+    for j in range(necklaceSize // pearlCount):                         # Génération du collier
+        down()                                                          # Position écriture
+        forward(1)                                                      # Trace le collier
+        right(-0.5)                                                     # Défini l'angle de rotation pour le collier
+    up()                                                          # lève le stylo
+    right(90)                                                     # et se déplace
+    forward(rayon * 2)                                            # pour générer
+    left(90)                                                      # une nouvelle
+    down()                                                        # pearl
+    if randint(0, 4) >= 3:                                        # Choisi
+        choice(functions)(rayon, color)                           # aléatoiremment
+    else:                                                         # les pearl
         pearls.perleC(rayon, color, randint(2, 5))
-    up()
-    forward(rayon * 2)
-    right(90)
+    up()                                                            # Repositionemment
+    forward(rayon * 2)                                              # du
+    right(90)                                                       # turtle
     pencolor(pearls.defaultColor)
 
-time.sleep(20)
+for i in range(necklaceSize//pearlCount):                         # Finission
+    down()                                                        # du collier
+    forward(1)                                                    #
+    right(-0.5)                                                   #

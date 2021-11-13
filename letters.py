@@ -4,12 +4,12 @@ from turtle import *
 defaultSpeed = 500
 
 
-def espacemment():
+def espacemment(): # Espacemment entre chaque lettre
     up()
     forward(30)
 
 
-def a():
+def a(): # Lettre A
     down()
     left(60)
     forward(80)
@@ -31,7 +31,7 @@ def a():
     forward(50)
 
 
-def u():
+def u(): # Lettre U
     up()
     left(90)
     forward(70)
@@ -58,7 +58,7 @@ def u():
     left(90)
 
 
-def s():
+def s(): # Lettre S
     down()
     forward(30)
 
@@ -79,10 +79,10 @@ def s():
     left(90)
 
 
-letters = [a, espacemment, u, espacemment, s, espacemment, a]
+letters = [a, espacemment, u, espacemment, s, espacemment, a] # Liste des fonctions
 
 
-def signature():
+def signature(): # Fonction de signature
     for i in range(len(letters)):
         pencolor(random(), random(), random())
         letters[i]()

@@ -69,12 +69,12 @@ def perleC(rayon, couleur, n):
     down()
     circle(rayon)  # Trace un cercle de rayon "rayon"
     fillcolor(couleur)  # Défini la couleur de remplissage par "couleur"
-    left(90)
-    up()
-    forward(rayon)
-    left(180)
+    left(90) # Tourne de 90
+    up() # Lève le stylo
+    forward(rayon) # Se centre
+    left(180) # Se retourne
     
-    for i in range(1,n+1):
+    for i in range(1,n+1): # Trace les cercles concentriques
         up()
         forward(rayon/n)
         
@@ -94,12 +94,12 @@ def perleD(rayon, couleur):
     down()
     circle(rayon)  # Trace un cercle de rayon "rayon"
     fillcolor(couleur)  # Défini la couleur de remplissage par "couleur"
-    left(90)
-    up()
-    forward(rayon)
-    left(180)
+    left(90) # Se Tourne de 90
+    up() # Relève le stylo
+    forward(rayon) # Se centre
+    left(180) # Se retourne
     
-    for i in range(3, 1, -1):
+    for i in range(3, 1, -1): #Trace le smiley
         up()
         forward(rayon/i)
         
