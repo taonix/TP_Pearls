@@ -61,4 +61,4 @@ for i in range(necklaceSize // pearlCount):  # Finission
 
 for j in range(0, 6):  # Hexagone
     forward(5)
-    left(60)
+    left(60) #Coucou
